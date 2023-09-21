@@ -16,11 +16,16 @@ repositories {
 }
 
 dependencies {
+	//Spring
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	
+	//Lombok
 	compileOnly ("org.projectlombok:lombok:1.18.30")
     annotationProcessor ("org.projectlombok:lombok:1.18.30")
+    // H2 Database
+	implementation("com.h2database:h2:2.2.224") 
 }
 
 tasks.withType<Test> {
