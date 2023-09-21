@@ -1,8 +1,5 @@
 package com.mouawad.cursomc.resources;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +14,7 @@ public class CategoriasResources {
 
 	@Autowired
 	private CategoriaService service;
-	
+
 	@GetMapping(value = "/categorias/{id}")
 	public ResponseEntity<?> find(@PathVariable("id") Integer id) {
 		Categoria obj = service.buscar(id);
