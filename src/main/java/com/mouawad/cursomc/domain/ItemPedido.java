@@ -2,6 +2,8 @@ package com.mouawad.cursomc.domain;
 
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import lombok.Getter;
@@ -14,6 +16,7 @@ import lombok.Setter;
 @Entity
 public class ItemPedido {
 
+	@JsonIgnore
 	@EmbeddedId
 	private ItemPedidoPK id = new ItemPedidoPK();
 
@@ -30,6 +33,7 @@ public class ItemPedido {
 		this.preco = preco;
 	}
 
+	@JsonIgnore
 	public Pedido getPedido() {
 		return this.id.getPedido();
 	}
